@@ -4,9 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>OMDB Movies</title>
+    <title>moviedetails.html</title>
 
     <link rel="stylesheet" type="text/css" href="movies.css" />
+    <script src="movies.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,42 +23,28 @@
     ></script>
   </head>
 
-  <body>
+  <body onload="singleMovie()">
     <div class="header">
       <div class="header-container">
         <div>
-          <h1>Search for movies</h1>
+          <h1>Movie Details</h1>
+        </div>
+        <div class="header-link">
+          <span><a href="movies.html">Back to Home</a></span>
         </div>
       </div>
       <div class="search-box">
-        <input
-          type="text"
-          placeholder="Type movie name here..."
-          class="search-bar"
-          id="Input"
-        />
+        <input type="text" placeholder="Type movie name here..." />
         <button type="submit">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
       </div>
     </div>
-    <!-- Main Content Container -->
+    <!--Main Content Container-->
     <div class="main">
-      <!-- Search Items Display Section -->
-      <div class="fav-container">
-        <!-- Items are displayed here -->
+      <div class="movie-container">
+        <!-- Movie details are displayed here-->
       </div>
-      <!--Watermark Area / Start Exploring Section-->
-      <!-- <div class="start-exploring">
-        <i class="fa-solid fa-film fa-6x"></i><br />
-        <span>Start Exploring!</span>
-      </div>-->
     </div>
-
-    <div class="footer">
-      <div class="pagination"></div>
-    </div>
-
-    <script src="movies.js"></script>
   </body>
 </html>
