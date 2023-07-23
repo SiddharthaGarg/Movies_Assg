@@ -8,12 +8,13 @@ const searchInput = document.querySelector(".search-bar");
 const displaySearchList = document.querySelector(".fav-container");
 
 window.addEventListener("load", (e) => {
-  fetch("http://www.omdbapi.com/?s=Batman&apikey=b834510")
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      displayMovieList(data.Search);
-    });
+  // fetch("http://www.omdbapi.com/?s=Batman&apikey=b834510")
+  //   .then((res) => res.json())
+  //   .then((data) => {
+  //     console.log(data);
+  //     displayMovieList(data.Search);
+  //   });
+  findMovies("Batman", currentPage);
 });
 
 searchInput.addEventListener("input", (e) => {
@@ -22,16 +23,6 @@ searchInput.addEventListener("input", (e) => {
   findMovies(searchText, currentPage);
 });
 
-// Function to fetch movies from the OMDB API
-async function fetchMovies(searchText, page) {
-  const apiUrl = `https://www.omdbapi.com/?apikey=${apiKey}&s=${searchText}&page=${page}`;
-  const response = await fetch(apiUrl);
-  let data = [];
-  if (response.status === 200) {
-    data = await response.json();
-  }
-  return data;
-}
 async function findMovies(searchText, page) {
   //   const data = await fetchMovies(searchText, currentPage);
   const apiUrl = `https://www.omdbapi.com/?apikey=${apiKey}&s=${searchText.trim()}&page=${page}`;
